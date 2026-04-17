@@ -57,13 +57,26 @@ Main.java (depends on UserInterface)
 **Due April 18th**
 
 Employee.java
-Create class with private fields matching database columns
+Create class with private fields matching database columns (Refer to assignment doc and past labs sql diagrams)
 Add constructor, getters, and setters
 Add toString() method for easy printing
 
 User.java
 Create class with fields for logged-in user
 Choose approach: String or inner enum for role
+
+Option A (String):
+
+private int empID;
+private String username;
+private String role;  // "HR_ADMIN" or "GENERAL_EMPLOYEE"
+
+Option B (Inner enum):
+
+public enum Role { HR_ADMIN, GENERAL_EMPLOYEE }
+private int empID;
+private String username;
+private Role role;
 
 
 **Due April 19th**
