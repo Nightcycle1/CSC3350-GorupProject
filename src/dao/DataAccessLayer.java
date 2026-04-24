@@ -22,9 +22,9 @@ public class DataAccessLayer {
         try {
             // Load properties from config file
             Properties props = new Properties();
-            FileInputStream fis = new FileInputStream("../../config.properties");
-            props.load(fis);
-            fis.close();
+            try (FileInputStream fis = new FileInputStream("config.properties")) {
+                props.load(fis);
+            }
 
             String url = props.getProperty("db.url");
             String user = props.getProperty("db.user");

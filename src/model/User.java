@@ -24,10 +24,10 @@ public class User {
         this.role = role;
     }
 
-    public int getempID() {
+    public int getEmpID() {
         return empID;
     }
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
     public Role getRole() {
