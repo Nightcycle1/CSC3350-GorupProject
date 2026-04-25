@@ -4,6 +4,10 @@ package controller;
  * Generates pay statements, job title totals, division totals, and new hire reports.
  *  
  */
+
+import dao.DataAccessLayer;
+import model.User;
+
 public class ReportGenerator {
 
     private DataAccessLayer dal;
