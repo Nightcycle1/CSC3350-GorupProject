@@ -138,8 +138,13 @@ public class DataAccessLayer {
     }
 
     public void updateEmployee(int empID, Employee data) {
+        if (findEmployeeById(empID) == null) {
+            System.out.println("No employee found with ID: " + empID);
+            return;
+        }
         try {
-            String sql = "UPDATE employees SET Fname=?, Lname=?, email=?, HireDate=?, Salary=?, SSN=?, addressID=? WHERE empID=?";            PreparedStatement statement = conn.prepareStatement(sql);
+            String sql = "UPDATE employees SET Fname=?, Lname=?, email=?, HireDate=?, Salary=?, SSN=?, addressID=?, username=?, password=? WHERE empID=?";
+            PreparedStatement statement = conn.prepareStatement(sql);
 
             statement.setString(1, data.getFname());
             statement.setString(2, data.getLname());
